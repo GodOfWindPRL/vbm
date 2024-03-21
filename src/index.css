@@ -11,3 +11,68 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: "Evogria";
+  src: url("assets/fonts/Evogria.otf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Judson";
+  src: url("assets/fonts/Judson-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  color: white;
+  background: #1E1E1E;
+  font-family: "Judson";
+  scroll-behavior: smooth;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.text-1 {
+  font-family: "Evogria";
+  line-height: 20.8px;
+  font-size: 16px;
+}
+
+.text-3 {
+  font-family: "Evogria";
+  line-height: 24px;
+  font-size: 130%;
+}
+
+.text-2 {
+  font-family: "Judson";
+  line-height: 26px;
+  font-size: 20px;
+}
+
+.text-0 {
+  font-family: "Judson";
+  line-height: 18.2px;
+  font-size: 14px;
+}
+.text-0-2 {
+  font-family: "Evogria";
+  line-height: 18.2px;
+  font-size: 14px;
+}
+
+.color-white {
+  color: white;
+}

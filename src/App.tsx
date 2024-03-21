@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Footer from 'components/Footer';
+import Header from 'components/Header';
+import { GlobalStyle } from 'constants/globalStyled';
+import Banner from 'pages/Banner';
+import KeyValue from 'pages/KeyValue';
+import styled from 'styled-components';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyle />
+      <Wrap>
+        <Header />
+        <Banner />
+        <KeyValue />
+        <Footer />
+      </Wrap>
+    </>
   );
 }
 
 export default App;
+
+const Wrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+`
