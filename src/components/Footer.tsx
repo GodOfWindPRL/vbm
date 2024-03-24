@@ -6,48 +6,50 @@ import imgTextContact from 'assets/images/img-text-contact.png';
 import bgFooter from 'assets/images/bg-footer.png';
 import { breakpointsMedias } from 'constants/breakpoints';
 
+export const listContact = [{
+    icon: icon1,
+    text: "SUBBER",
+    link: "",
+    color: "red",
+    bg: "#EA430F1A"
+}, {
+    icon: icon2,
+    text: "ATLAS3",
+    link: "",
+    color: "white",
+    bg: "#ffffff17"
+}]
+
 const Footer = () => {
 
-    const listContact = [{
-        icon: icon1,
-        text: "SUBBER",
-        link: "",
-        color: "red",
-        bg: "#EA430F1A"
-    }, {
-        icon: icon2,
-        text: "ATLAS3",
-        link: "",
-        color: "white",
-        bg: "#ffffff17"
-    }]
-
     return (
-        <Wrap className='footer' id='contact'>
-            <div className="container">
-                <div className="footer-title">
-                    <img src={imgTextContact} alt="" />
-                </div>
-                <div className="footer-bar">
-                    <div className="fb-round"></div>
-                    <div className="fb-line"></div>
-                    <div className="fb-cross"></div>
-                </div>
-                <div className="footer-link">
-                    {listContact.map((item, index) => <a href={item.link} target='_blank' rel='noreferrer' key={index} className='fl-item'>
-                        <div className="fli-img" >
-                            <div className="" style={{
-                                border: `1px solid ${item.color}`,
-                                background: item.bg
-                            }}></div>
-                            <img src={item.icon} alt="" />
-                        </div>
-                        <span className='text-1' style={{ color: item.color }}>{item.text}</span>
-                    </a>)}
-                </div>
-            </div>
+        <>
 
-        </Wrap>
+            <Wrap className='footer' id='contact'>
+                <div className="container">
+                    <div className="footer-title">
+                        <img src={imgTextContact} alt="" />
+                    </div>
+                    <div className="footer-bar">
+                        <div className="fb-round"></div>
+                        <div className="fb-line"></div>
+                        <div className="fb-cross"></div>
+                    </div>
+                    <div className="footer-link">
+                        {listContact.map((item, index) => <a href={item.link} target='_blank' rel='noreferrer' key={index} className='fl-item'>
+                            <div className="fli-img" >
+                                <div className="" style={{
+                                    border: `1px solid ${item.color}`,
+                                    background: item.bg
+                                }}></div>
+                                <img src={item.icon} alt="" />
+                            </div>
+                            <span className='text-1' style={{ color: item.color }}>{item.text}</span>
+                        </a>)}
+                    </div>
+                </div>
+            </Wrap></>
+
     )
 }
 
@@ -63,6 +65,7 @@ const Wrap = styled.div`
     margin-top: auto;
     position: relative;
     z-index: 0;
+    overflow: hidden;
     &::before {
         content: "";
         position: absolute;
@@ -72,8 +75,10 @@ const Wrap = styled.div`
         height: 70vw;
         background-image: url(${bgFooter});
         background-position: center;
+        background-size: cover;
         z-index: 0;
         transform: translateX(-50%);
+        opacity: 0.6;
     }
     .container {
         display: flex;
@@ -184,9 +189,104 @@ const Wrap = styled.div`
         }
     }
     ${breakpointsMedias.max1199} {
+        height: 160px;
+        &::before {
+            width: 750px;
+            height: 750px;
+            opacity: 0.6;
+            top: 0;
+            transform: translate(-50%, -76%);
+            background-size: cover;
+        }
+        .container {
+            .footer-title {
+                width: 228px;
+                margin-right: 24px;
+            }
+            .footer-bar {
 
+            }
+            .footer-link {
+                .fl-item {
+                    gap: 16px;
+                    padding: 0 24px;
+                    .fli-img {
+                        width: 50px;
+                        height: 50px;
+                        > img {
+                            width: 32px;
+                            height: 32px;
+                        }
+                    }
+                    &:first-child {
+                        &::after {
+                            height: 24px;
+                        }
+                    }
+                    &:last-child {
+                        padding-right: 0;
+                    }
+                }
+            }
+            &:hover {
+                .footer-title {
+                    margin-right: 32px;
+                }
+                .footer-link {
+                    .fl-item {
+                        padding: 0 24px;
+                    }
+                }
+            }
+        }
     }
-    ${breakpointsMedias.max991} {
-       
+    ${breakpointsMedias.max767} {
+        height: 244px;
+        &::before {
+            opacity: 0.6;
+        }
+        .container {
+            flex-direction: column;
+            justify-content: center;
+            gap: 24px;
+            padding: 0;
+            .footer-title {
+                width: 228px;
+                margin-right: 0;
+            }
+            .footer-bar {
+                display: none;
+            }
+            .footer-link {
+                width: 100%;
+                justify-content: center;
+                .fl-item {
+                    gap: 16px;
+                    flex: 1;
+                    padding: 0 24px;
+                    max-width: 200px;
+                    justify-content: center;
+                    &:first-child {
+                        &::after {
+                            height: 40px;
+                            background-color: #e1ba5f69;
+                        }
+                    }
+                    &:last-child {
+                        padding-right: 24px;
+                    }
+                }
+            }
+            &:hover {
+                .footer-title {
+                    margin-right: 0;
+                }
+                .footer-link {
+                    .fl-item {
+                        padding: 0 24px;
+                    }
+                }
+            }
+        }
     }
 `;
