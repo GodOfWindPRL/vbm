@@ -147,7 +147,10 @@ const Wrap = styled.div`
     background-image: url(${bgBird});
     background-size: cover;
     background-position: center;
+    transition: 3s ease-in-out !important;
+   
   }
+
   .appear-left {
     transition: 2s ease-in-out;
     opacity: 0;

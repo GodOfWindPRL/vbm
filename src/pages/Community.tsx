@@ -236,7 +236,7 @@ const Wrap = styled.div`
         background-image: url(${bgDrum});
         height: 69.7vw;
         background-size: cover;
-        transition: 2.5s ease-in-out;
+        transition: 3s ease-in-out;
     }
     .cm-drum-active {
         transform: rotate(0deg);;
@@ -375,12 +375,12 @@ const Wrap = styled.div`
         background-size:  100% auto;
         background-position: bottom center;
         background-repeat: no-repeat;
-        transition: 2s ease-in-out;
+        transition: 3s ease-in-out;
         transform: translateY(50%);
     }
     .cm-temple {
         background-image: url(${bgTemple});
-        transition: 2.5s ease-in-out;
+        transition: 4s ease-in-out;
     }
     .cm-bot2 {
         background-image: url(${mountBot2});

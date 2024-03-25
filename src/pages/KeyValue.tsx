@@ -194,7 +194,7 @@ const Wrap = styled.div`
         background-image: url(${bgMid});
         background-size: cover;
         background-position: center;
-        transition: 2s ease-in-out;
+        transition: 4s ease-in-out;
         top: 57%;
         left: 57%;
         transform: scale(1.2) translate(-50%, -50%);
@@ -231,7 +231,7 @@ const Wrap = styled.div`
                 left: 0;
                 opacity: 0;
                 transform: translate(-100%, 0);
-                transition: 2s ease-in-out;
+                transition: 4s ease-in-out;
                 > img {
                     width: auto;
                     height: 100%;
@@ -306,7 +306,7 @@ const Wrap = styled.div`
                     }
                 }
                 .kmcr-bot {
-                    transition: 2s ease-in-out;
+                    transition: 3s ease-in-out;
                     width: 0%;
                     height: 36px;
                     background-image: url(${barBot});
@@ -318,7 +318,9 @@ const Wrap = styled.div`
                 width: 55%;
                 height: fit-content;
                 top: 50%;
-                transform: translate(-20%, -50%);
+                transform: translate(20%, -50%);
+                transition: 3s ease-in-out;
+                opacity: 0;
                 > img {
                     width: 100%;
                     height: auto;
@@ -331,6 +333,22 @@ const Wrap = styled.div`
             .kmc-right {
                 .kmcr-bot {
                     width: 100%;
+                }
+            }
+            .star {
+                transform: translate(-20%, -50%);
+                opacity: 1;
+                animation: light 4s infinite ease-in-out;
+                @keyframes light {
+                    0% {
+                        opacity: 1; 
+                    }
+                    50% {
+                        opacity: 0.2; 
+                    }
+                    100% {
+                        opacity: 1; 
+                    }
                 }
             }
         }
