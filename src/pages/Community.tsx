@@ -43,11 +43,11 @@ const Community = () => {
         img: member4,
         name: "Quantumcat",
     },
-     {
+    {
         img: member4,
         name: "Quantumcat",
     }
-]
+    ]
 
     useEffect(() => {
         const appearBot = document.querySelectorAll('.cm-bot') as any;
@@ -349,6 +349,7 @@ const Wrap = styled.div`
         background-size: contain;
         background-position: left;
         background-repeat: no-repeat;
+        transition: 2s ease-in-out;
 
     }
     .cm-right {
@@ -362,6 +363,7 @@ const Wrap = styled.div`
         background-size: contain;
         background-position: right;
         background-repeat: no-repeat;
+        transition: 2s ease-in-out;
     }
     .cm-bot,
     .cm-temple {

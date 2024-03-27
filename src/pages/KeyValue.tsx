@@ -237,6 +237,9 @@ const Wrap = styled.div`
                     height: 100%;
                 }
             }
+            .appear-left-active {
+                transform: translate(0, 0);
+            }
         }
         .km-content {
             width: 100%;
@@ -375,6 +378,7 @@ const Wrap = styled.div`
         background-image: url(${bgLeft});
         background-size: cover;
         background-position: center;
+        transition: 2s ease-in-out;
     }
     .key-right {
         position: absolute;
@@ -385,6 +389,7 @@ const Wrap = styled.div`
         z-index: 0;
         background-image: url(${bgRight});
         background-size: 100% 100%;
+        transition: 2s ease-in-out;
     }
     ${breakpointsMedias.max1199} {
         height: fit-content;

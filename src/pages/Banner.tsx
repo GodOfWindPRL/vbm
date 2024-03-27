@@ -19,6 +19,18 @@ const Banner = () => {
         if (entry.isIntersecting) {
           entry.target.classList.add('appear-left-active');
         }
+        setTimeout(() => {
+          document.addEventListener("mousemove", (e) => {
+            let listMove = document.querySelectorAll(".mouse-move");
+            listMove.forEach((item) => {
+              let speed = Number(item.getAttribute("data-speed"));
+              let x = window.innerWidth - e.pageX * speed;
+              let y = window.innerHeight - e.pageY * speed;
+              (item as any).style.transform = `translate(${x / 100}px,${y / 100}px)`;
+              (item as any).style.transition = `none`;
+            })
+          })
+        }, 3000)
       });
     }
     const cb2 = function (entries: any) {
@@ -48,10 +60,10 @@ const Banner = () => {
         </div>
       </div>
       <div className="lightshadow"></div>
-      <div className="banner-bird appear-left"></div>
+      <div className="banner-bird appear-left mouse-move" data-speed="3"></div>
       <div className="banner-shadow"></div>
-      <div className="banner-left appear-left"></div>
-      <div className="banner-right appear-right"></div>
+      <div className="banner-left appear-left mouse-move" data-speed="-3"></div>
+      <div className="banner-right appear-right mouse-move" data-speed="5"></div>
       <div className="banner-main" id='banner-main'>
         <div className='bm-text-1' />
         <span className="bm-text-2 text-3 color-primary">BITCOIN MAXI</span>
@@ -147,17 +159,15 @@ const Wrap = styled.div`
     background-image: url(${bgBird});
     background-size: cover;
     background-position: center;
-    transition: 3s ease-in-out !important;
+    transition: 3s ease-in-out;
    
   }
 
   .appear-left {
-    transition: 2s ease-in-out;
     opacity: 0;
     transform: translate(-50%, 10%);
   }
   .appear-right {
-    transition: 2s ease-in-out;
     opacity: 0;
     transform: translate(50%, 10%);
   }
@@ -261,6 +271,7 @@ const Wrap = styled.div`
     z-index: 0;
     background-image: url(${bgLeft});
     background-size: 100% 100%;
+    transition: 2s ease-in-out;
   }
   .banner-right {
     position: absolute;
@@ -271,6 +282,7 @@ const Wrap = styled.div`
     z-index: 0;
     background-image: url(${bgRight});
     background-size: 100% 100%;
+    transition: 2s ease-in-out;
   }
   ${breakpointsMedias.max1199} {
     height: fit-content;

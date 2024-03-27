@@ -40,17 +40,15 @@ export const GlobalStyle = createGlobalStyle`
       text-transform: uppercase;
     }
     .appear-left {
-      transition: 2s ease-in-out;
       opacity: 0;
       transform: translate(-50%, 10%);
     }
     .appear-right {
-      transition: 2s ease-in-out;
       opacity: 0;
       transform: translate(50%, 10%);
     }
     .appear-left-active {
       opacity: 1 !important;
-      transform: translate(0%, 0) !important;
+      transform: translate(0%, 0);
     }
 `;
