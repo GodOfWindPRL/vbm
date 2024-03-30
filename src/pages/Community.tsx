@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import star from 'assets/images/star.png';
 import textcm from 'assets/images/text-cm.png';
 import { useEffect } from 'react';
 import mountLeft from 'assets/images/mout-left.png';
@@ -311,6 +310,10 @@ const Wrap = styled.div`
                             flex-direction: column;
                             justify-content: center;
                             gap: 4px;
+                        }
+                        &:hover {
+                            border: 1px solid #e1ba5f89;
+                            background-image: linear-gradient(to bottom,#e1ba5f7a  0%, #ca971fb1 100%); 
                         }
                     }
                 }

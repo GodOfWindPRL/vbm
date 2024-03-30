@@ -1,5 +1,9 @@
 import styled from 'styled-components';
-import bgBird from 'assets/images/banner-bird.png';
+import imgBird1 from 'assets/images/bird-top-right.png';
+import imgBird2 from 'assets/images/bird-top-left.png';
+import imgBird3 from 'assets/images/bird-mid-right.png';
+import imgBird4 from 'assets/images/cloud-bot-right.png';
+import imgBird5 from 'assets/images/cloud-bot-left.png';
 import textViet from 'assets/images/text-viet.png';
 import { useEffect } from 'react';
 import bgLeft from 'assets/images/bg-left.png';
@@ -60,17 +64,21 @@ const Banner = () => {
         </div>
       </div>
       <div className="lightshadow"></div>
-      <div className="banner-bird appear-left mouse-move" data-speed="3"></div>
+      <div className="banner-bird banner-bird1 appear-left mouse-move" data-speed="-2"></div>
+      <div className="banner-bird banner-bird2 appear-left mouse-move" data-speed="2"></div>
+      <div className="banner-bird banner-bird3 appear-left mouse-move" data-speed="-4"></div>
+      <div className="cloud-right appear-right" data-speed="6"></div>
+      <div className="banner-bird banner-bird5 appear-left mouse-move" data-speed="4"></div>
       <div className="banner-shadow"></div>
-      <div className="banner-left appear-left mouse-move" data-speed="-3"></div>
-      <div className="banner-right appear-right mouse-move" data-speed="5"></div>
+      <div className="banner-left appear-left mouse-move" data-speed="-2"></div>
+      <div className="banner-right appear-right mouse-move" data-speed="3"></div>
       <div className="banner-main" id='banner-main'>
         <div className='bm-text-1' />
         <span className="bm-text-2 text-3 color-primary">BITCOIN MAXI</span>
         <span className="bm-text-3 text-2 text-center">The community of those who believe in core values and the future development of the Bitcoin ecosystem.</span>
-        <div className="bm-bt">
+        <a href='https://twitter.com/vietbitcoinmaxi' target='_blank' rel='noreferrer' className="bm-bt">
           <span className="text-2 color-primary">Join with Us</span>
-        </div>
+        </a>
         <div className="bm-text-4">
           <span className="text-0 color-white">Powered by</span>
           <span className="text-0-2 color-primary text-uppercase">Bitcoin OG members</span>
@@ -156,11 +164,24 @@ const Wrap = styled.div`
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: url(${bgBird});
     background-size: cover;
     background-position: center;
     transition: 3s ease-in-out;
-   
+  }
+  .banner-bird1 {
+    background-image: url(${imgBird1});
+  }
+  .banner-bird2 {
+    background-image: url(${imgBird2});
+  }
+  .banner-bird3 {
+    background-image: url(${imgBird3});
+  }
+  .banner-bird4 {
+    background-image: url(${imgBird4});
+  }
+  .banner-bird5 {
+    background-image: url(${imgBird5});
   }
 
   .appear-left {
@@ -264,13 +285,14 @@ const Wrap = styled.div`
   }
   .banner-left {
     position: absolute;
-    width: 34.4%;
-    height: 61.6%;
+    width: 100%;
+    height: 100%;
     bottom: 0;
     left: 0;
     z-index: 0;
     background-image: url(${bgLeft});
-    background-size: 100% 100%;
+    background-size: cover;
+    background-position: center;
     transition: 2s ease-in-out;
   }
   .banner-right {
@@ -283,6 +305,17 @@ const Wrap = styled.div`
     background-image: url(${bgRight});
     background-size: 100% 100%;
     transition: 2s ease-in-out;
+  }
+  .cloud-right {
+    position: absolute;
+    width: 36.4%;
+    height: 26%;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+    background-image: url(${imgBird4});
+    background-size: 100% 100%;
+    transition: 3s ease-in-out;
   }
   ${breakpointsMedias.max1199} {
     height: fit-content;
@@ -298,7 +331,6 @@ const Wrap = styled.div`
       position: absolute;
       width: 100%;
       height: 100%;
-      background-image: url(${bgBird});
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;

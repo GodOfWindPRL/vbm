@@ -274,6 +274,7 @@ const Wrap = styled.div`
                             padding: 1px;
                             display: flex;
                             background-image: linear-gradient(to bottom, #544618 0%, #665216 100%);
+                            cursor: pointer;
                             .ki {
                                 border-radius: 15px;
                                 background-image: linear-gradient(to bottom, #2A261D 0%, #40361C 100%);
@@ -304,6 +305,13 @@ const Wrap = styled.div`
                                     }
 
                                 }
+                               
+                            }
+                            &:hover {
+                                background-image: linear-gradient(to bottom, #ac8810 0%, #d5a410 100%);
+                                .ki {
+                                    background-image: linear-gradient(to bottom, #695629c4 0%, #a37709c9 100%);
+                                }    
                             }
                         }
                     }
@@ -378,18 +386,19 @@ const Wrap = styled.div`
         background-image: url(${bgLeft});
         background-size: cover;
         background-position: center;
-        transition: 2s ease-in-out;
+        transition: 3s ease-in-out;
     }
     .key-right {
         position: absolute;
-        width: 34.4%;
-        height: 29.6%;
+        width: 100%;
+        height: 100%;
         bottom: 0;
         right: 0;
         z-index: 0;
         background-image: url(${bgRight});
-        background-size: 100% 100%;
-        transition: 2s ease-in-out;
+        background-size: cover;
+        background-position: center;
+        transition: 3s ease-in-out;
     }
     ${breakpointsMedias.max1199} {
         height: fit-content;
@@ -536,13 +545,14 @@ const Wrap = styled.div`
         }
         .key-right {
             position: absolute;
-            width: 34.4%;
-            height: 29.6%;
+            width: 100%;
+            height: 100%;
             bottom: 0;
             right: 0;
             z-index: 0;
             background-image: url(${bgRight});
-            background-size: 100% 100%;
+            background-size: cover;
+            background-position: center;
         }
     }
     ${breakpointsMedias.max767} {

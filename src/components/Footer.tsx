@@ -9,13 +9,13 @@ import { breakpointsMedias } from 'constants/breakpoints';
 export const listContact = [{
     icon: icon1,
     text: "SUBBER",
-    link: "",
+    link: "https://www.subber. xyz/vietbitcoinmaxi",
     color: "red",
     bg: "#EA430F1A"
 }, {
     icon: icon2,
     text: "ATLAS3",
-    link: "",
+    link: "https://atlas3.io/project/viet-bitcoin-maxi",
     color: "white",
     bg: "#ffffff17"
 }]
