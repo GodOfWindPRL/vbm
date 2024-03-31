@@ -386,7 +386,15 @@ const Wrap = styled.div`
       height: 100%;
       background-image: url(${bgBird2});
       top: 20px;
+      transform: unset !important;
     }
+    .banner-bird2,
+    .banner-bird3,
+    .banner-bird4,
+    .banner-bird5,
+    .cloud-right {
+      display: none;
+    }}
     .banner-left {
       width: 45.4%;
       height: 100%;
